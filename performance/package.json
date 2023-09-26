@@ -1,0 +1,11 @@
+{
+  "name": "performance",
+  "private": true,
+  "scripts": {
+    "test": "./stop-server.sh && start-server-and-test 'cd .. && SPRING_PROFILES_ACTIVE=dev ./gradlew bootRun > /dev/null' http-get://localhost:8080 'yarn artillery run add_mobilizing_units_script.yaml'"
+  },
+  "devDependencies": {
+    "artillery": "^2.0.0-31",
+    "start-server-and-test": "^1.12.3"
+  }
+}

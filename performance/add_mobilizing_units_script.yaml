@@ -1,0 +1,42 @@
+config:
+  plugins:
+    ensure: { }
+    expect: { }
+  ensure:
+    thresholds:
+      - "http.response_time.p99": 1000
+    maxErrorRate: 1
+
+  target: "http://localhost:8080"
+  phases:
+    - duration: 30
+      name:
+      arrivalRate: 1
+      maxVusers: 1
+
+#before:
+#  flow:
+#    - post:
+#        url: "/api/plans"
+#        followRedirect: false
+#        json:
+#          name: "newPlan"
+#          startDate: "03/04/2023"
+#          endDate: "03/25/2023"
+#    - get:
+#        url: "/api/plans"
+#        followRedirect: false
+#        capture:
+#          - json: $[0].id
+#            as: planId
+#scenarios:
+#  - name: "Add Mobilizing Unit"
+#    flow:
+#      - post:
+#          url: "/api/mobilizingunits"
+#          followRedirect: false
+#          json:
+#            src: "06386K100"
+#            planId: "{{planId}}"
+#          expect:
+#            statusCode: 200

@@ -1,0 +1,28 @@
+config:
+  plugins:
+    ensure: { }
+    expect: { }
+  ensure:
+    thresholds:
+      - "http.response_time.p99": 1000
+    maxErrorRate: 1
+
+  target: "http://localhost:8080"
+  phases:
+    - duration: 30
+      name:
+      arrivalRate: 5
+      maxVusers: 10
+
+
+#scenarios:
+#  - name: "Get Equipment"
+#    flow:
+#      - post:
+#          url: "/api/equipment"
+#          followRedirect: false
+#          json:
+#            src: "06386K100"
+#            planId: 1
+#          expect:
+#            statusCode: 200
