@@ -14,7 +14,8 @@ public class LogService implements LogDomainPorts {
     private final LogDatabasePorts logDatabasePorts;
     @Override
     public Log addLog(AddLog addLog) {
-        return logDatabasePorts.addLog(addLog);
+        Log log = new Log(addLog);
+        return logDatabasePorts.addLog(log);
     }
 
     @Override

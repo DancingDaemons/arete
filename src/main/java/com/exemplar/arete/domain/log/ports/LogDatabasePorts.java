@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface LogDatabasePorts {
     List<Log> getLogsByGoal(String goalId);
-    Log addLog(AddLog addLog);
+    Log addLog(Log log);
 }

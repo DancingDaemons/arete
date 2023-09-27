@@ -1,5 +1,6 @@
 package com.exemplar.arete.domain.log;
 
+import com.exemplar.arete.web.log.dto.AddLog;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -16,7 +17,7 @@ public class Log {
 
     private String id;
     private String goalId;
-    @JsonFormat(pattern = "yyyy-MM-dd")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:MM")
     private LocalDate date;
     private boolean complete;
     private String realized;
@@ -27,7 +28,13 @@ public class Log {
         this.goalId = goalId;
         this.complete = false;
     }
-
+    public Log(AddLog addLog){
+        this.date = addLog.getDate();
+        this.goalId = addLog.getGoalId();
+        this.complete = addLog.isComplete();
+        this.realized = addLog.getRealized();
+        this.note = addLog.getNote();
+    }
 }
 
 

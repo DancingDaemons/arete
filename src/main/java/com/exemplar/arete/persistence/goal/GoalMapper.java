@@ -9,7 +9,7 @@ import org.mapstruct.Mappings;
 public interface GoalMapper {
 
     @Mappings({
-            @Mapping(target = "id", source = "id"),
+            @Mapping(target = "id", ignore = true),
             @Mapping(target = "userId", source = "userId"),
             @Mapping(target = "goalName", source = "goalName"),
             @Mapping(target = "category", source = "category"),
