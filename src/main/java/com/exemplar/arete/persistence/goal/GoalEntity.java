@@ -1,5 +1,6 @@
 package com.exemplar.arete.persistence.goal;
 
+import lombok.NoArgsConstructor;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -7,6 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import java.util.ArrayList;
 import java.util.List;
 
+@NoArgsConstructor
 @Document(collection = "goals")
 public class GoalEntity {
 

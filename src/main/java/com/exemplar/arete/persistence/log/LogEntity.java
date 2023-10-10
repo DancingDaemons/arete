@@ -2,12 +2,14 @@ package com.exemplar.arete.persistence.log;
 
 import com.exemplar.arete.web.log.dto.AddLog;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.NoArgsConstructor;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDate;
 
+@NoArgsConstructor
 @Document(collection = "logs")
 public class LogEntity {
 
@@ -16,9 +18,9 @@ public class LogEntity {
     @JsonFormat(pattern = "yyyy-MM-dd")
     public LocalDate date;
     public boolean complete;
-    public String realized;
-
-    public String delta;
+//    public String realized;
+//
+//    public String delta;
     public String goalId;
 
     public String note;

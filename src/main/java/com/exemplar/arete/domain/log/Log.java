@@ -15,12 +15,12 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class Log {
 
-    private String id;
+    private ObjectId id;
     private String goalId;
     @JsonFormat(pattern = "yyyy-MM-dd HH:MM")
     private LocalDate date;
     private boolean complete;
-    private String realized;
+    //private String realized;
     private String note;
 
     public Log(LocalDate date, String goalId) {
@@ -32,9 +32,10 @@ public class Log {
         this.date = addLog.getDate();
         this.goalId = addLog.getGoalId();
         this.complete = addLog.isComplete();
-        this.realized = addLog.getRealized();
+        //this.realized = addLog.getRealized();
         this.note = addLog.getNote();
     }
+
 }
 
 

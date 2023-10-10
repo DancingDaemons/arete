@@ -8,7 +8,7 @@ import java.time.LocalDate;
 @Data
 public class AddLog {
     private String goalId;
-    @JsonFormat(pattern = "yyyy-MM-dd HH:MM")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm")
     private LocalDate date;
     private boolean complete;
     private String realized;

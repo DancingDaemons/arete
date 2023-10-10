@@ -15,7 +15,7 @@ import java.util.List;
 @NoArgsConstructor
 public class Goal {
 
-    private String id;
+    private ObjectId id;
     private String userId;
     private String goalName;
     private String category;
@@ -23,4 +23,12 @@ public class Goal {
     private String goalTarget;
     public List<ObjectId> logIds;
 
+    public Goal(String userId, String goalName, String category, String quantitativeType, String goalTarget, List<ObjectId> logIds) {
+        this.userId = userId;
+        this.goalName = goalName;
+        this.category = category;
+        this.quantitativeType = quantitativeType;
+        this.goalTarget = goalTarget;
+        this.logIds = logIds;
+    }
 }
