@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  postgres-db:
+    container_name: arete-postgres
+    image: postgres # use latest official postgres version
+    restart: always
+    environment:
+      POSTGRES_USER: arete_dev
+      POSTGRES_PASSWORD: arete123
+      POSTGRES_DB: arete_dev
+      POSTGRES_HOST_AUTH_METHOD: password
+    ports:
+      - "5432:5432"
+
+volumes:
+  postgresql_data:
+    driver: local
